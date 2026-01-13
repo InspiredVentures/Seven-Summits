@@ -62,6 +62,19 @@
       </div>
     </section>
 
+    <!-- Urgency: Countdown Timer Bar -->
+    <section class="countdown-bar dark-bg">
+      <div class="container countdown-content">
+        <span class="countdown-label">Next Summit Begins In:</span>
+        <div id="countdown" class="countdown-timer">
+          <div class="time-block"><span id="days">00</span><span class="label">Days</span></div>
+          <div class="time-block"><span id="hours">00</span><span class="label">Hrs</span></div>
+          <div class="time-block"><span id="minutes">00</span><span class="label">Mins</span></div>
+        </div>
+        <a href="register.html" class="btn btn-white btn-sm">Join Now</a>
+      </div>
+    </section>
+
     <section class="section about-section">
       <div class="container center-text">
         <h2 class="section-title scroll-reveal">The Summit <span class="accent-text">Awaits</span></h2>
@@ -100,6 +113,42 @@
       </div>
     </section>
 
+    <!-- Social Proof: Testimonials -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title center-text scroll-reveal">Voices from the Summit</h2>
+        <div class="testimonials-grid" style="margin-top: 3rem;">
+          <div class="testimonial-card scroll-reveal">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="quote-text">"I came for the mountain adventure, but I left with a completely new perspective on my
+              business leadership. Mark's insights are gold."</p>
+            <div class="quote-author">
+              <strong>Sarah Jenkins</strong>
+              <span>CEO, TechFlow</span>
+            </div>
+          </div>
+          <div class="testimonial-card scroll-reveal delay-1">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="quote-text">"The connection with this group is unlike anything else. No egos, just high performers
+              pushing each other to be better. Life changing."</p>
+            <div class="quote-author">
+              <strong>David Mehta</strong>
+              <span>Former NFL Linebacker</span>
+            </div>
+          </div>
+          <div class="testimonial-card scroll-reveal delay-2">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p class="quote-text">"Sun Valley is the perfect backdrop. The mix of physical challenge and mental
+              workshops gave me the breakthrough I needed."</p>
+            <div class="quote-author">
+              <strong>Elena Rodriguez</strong>
+              <span>Entrepreneur</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section dark-bg">
       <div class="container">
         <div class="grid-2">
@@ -123,8 +172,19 @@
         <div class="venue-intro scroll-reveal">
           <p>Hosted at the iconic <strong>Sun Valley Lodge</strong>, where history and high adventure converge.</p>
         </div>
-        <div class="venue-image scroll-reveal delay-1">
-          <img src="public/lodge.png" alt="Sun Valley Lodge" />
+        <div class="venue-gallery-grid scroll-reveal delay-1">
+          <div class="gallery-item">
+            <img src="public/lodge.png" alt="Sun Valley Lodge Exterior" />
+          </div>
+          <div class="gallery-item">
+            <img src="public/lodge_interior.jpg" alt="Lodge Interior" />
+          </div>
+          <div class="gallery-item">
+            <img src="public/lodge_terrace.jpg" alt="Lodge Terrace" />
+          </div>
+          <div class="gallery-item">
+            <img src="public/hero.png" alt="Scenic View" />
+          </div>
         </div>
         <div style="margin-top: 2rem;">
           <a href="venue.html" class="btn btn-primary">Explore the Venue</a>
@@ -154,6 +214,11 @@
     </footer>
 
     <script src="main.js"></script>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta">
+      <a href="register.html" class="btn btn-primary full-width">Join The Summit</a>
+    </div>
 </body>
 
 </html>

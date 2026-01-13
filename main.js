@@ -59,4 +59,35 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileBtn.classList.toggle('active');
         });
     }
+
+    // Countdown Timer logic
+    const countdown = document.getElementById('countdown');
+    if (countdown) {
+        // Set target date: Sept 25, 2026
+        const targetDate = new Date('September 25, 2026 00:00:00').getTime();
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                // Event started
+                document.getElementById('days').innerText = "00";
+                document.getElementById('hours').innerText = "00";
+                document.getElementById('minutes').innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById('days').innerText = days < 10 ? "0" + days : days;
+            document.getElementById('hours').innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById('minutes').innerText = minutes < 10 ? "0" + minutes : minutes;
+        }
+
+        updateTimer(); // Run once immediately
+        setInterval(updateTimer, 60000); // Update every minute
+    }
 });

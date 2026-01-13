@@ -411,12 +411,32 @@ h3 {
 }
 
 /* Gallery - Sharp Grid */
-.venue-gallery {
+.venue-gallery,
+.venue-gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    /* Flush grid */
-    margin-bottom: 3rem;
+    grid-template-columns: repeat(2, 1fr);
+    /* 2x2 Grid for homepage */
+    gap: 10px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.venue-gallery-grid .gallery-item {
+    height: 250px;
+    /* Uniform height */
+    overflow: hidden;
+}
+
+.venue-gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.venue-gallery-grid .gallery-item:hover img {
+    transform: scale(1.05);
+    /* Zoom effect */
 }
 
 .gallery-item {
@@ -729,7 +749,44 @@ h3 {
         /* Remove scale effect on mobile */
     }
 
+    /* Responsive Edits for new elements */
+    .countdown-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .countdown-timer {
+        gap: 1.5rem;
+    }
+
+    /* Sticky Mobile CTA */
+    .sticky-cta {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 1rem;
+        border-top: 2px solid black;
+        z-index: 9999;
+        display: block;
+        /* Visible on mobile */
+        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Ensure footer doesn't get hidden behind it */
+    .footer {
+        padding-bottom: 7rem;
+    }
+
     .section {
         padding: 3rem 0;
+    }
+}
+
+/* Hide Sticky CTA on desktop */
+@media (min-width: 769px) {
+    .sticky-cta {
+        display: none;
     }
 }
