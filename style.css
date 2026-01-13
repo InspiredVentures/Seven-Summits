@@ -449,29 +449,63 @@ h3 {
     padding: 1rem 1.5rem 2rem;
 }
 
+.placeholder-img {
+    background-color: #f3f4f6;
+    background-image: linear-gradient(45deg, #e5e7eb 25%, transparent 25%, transparent 75%, #e5e7eb 75%, #e5e7eb),
+        linear-gradient(45deg, #e5e7eb 25%, transparent 25%, transparent 75%, #e5e7eb 75%, #e5e7eb);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placeholder-img::after {
+    content: '?';
+    font-family: var(--font-heading);
+    font-size: 5rem;
+    color: #d1d5db;
+}
+
 /* Itinerary - Timeline Style or Block? Let's do Block */
 .day-card {
     background: white;
     border: 2px solid black;
     border-radius: 0;
-    padding: 2rem;
+    padding: 3rem;
+    /* More padding inside content */
     border-left: 10px solid black;
     /* Thick marker */
     box-shadow: none;
+    margin-bottom: 2rem;
+    /* Ensure space if they stack */
+    height: 100%;
+    /* Uniform height in grid */
 }
 
 .day-card:hover {
     transform: translateY(-5px);
-    box-shadow: 5px 5px 0 #ccc;
+    box-shadow: 10px 10px 0 #ccc;
+    /* Stronger shadow on hover */
 }
 
 .day-label {
     background: black;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 1.5rem;
+    /* Larger label */
     border-radius: 0;
     font-weight: 700;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+    /* More space below label */
+    display: inline-block;
+}
+
+.schedule-item {
+    margin-bottom: 2rem;
+    /* More space between time slots */
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 1.5rem;
 }
 
 /* Pricing - Technical Look */
