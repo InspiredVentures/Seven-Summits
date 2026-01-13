@@ -547,7 +547,7 @@ h3 {
 }
 
 .footer-logo {
-    filter: brightness(0) invert(1);
+    /* filter: brightness(0) invert(1); Removed to restore original colors */
     height: 40px;
 }
 
