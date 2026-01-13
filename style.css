@@ -431,21 +431,37 @@ h3 {
     margin-bottom: 2rem;
 }
 
-.venue-gallery-grid .gallery-item {
+/* Shared Item Styles */
+.venue-gallery-grid .gallery-item,
+.venue-gallery .gallery-item {
     height: 250px;
     overflow: hidden;
+    position: relative;
+    /* Ensure overlay positioning works */
 }
 
-.venue-gallery-grid img {
+.venue-gallery-grid img,
+.venue-gallery img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.venue-gallery-grid .gallery-item:hover img {
+.venue-gallery-grid .gallery-item:hover img,
+.venue-gallery .gallery-item:hover img {
     transform: scale(1.05);
     /* Zoom effect */
+}
+
+/* Responsive Grid Fixes */
+@media (max-width: 768px) {
+
+    .venue-gallery,
+    .venue-gallery-grid {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+    }
 }
 
 .gallery-item {
