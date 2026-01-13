@@ -48,4 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
             header.style.padding = '1rem 0';
         }
     });
+
+    // Mobile Menu Toggle
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    const navList = document.querySelector('.nav-list');
+
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            mobileBtn.classList.toggle('active');
+        });
+    }
 });
