@@ -707,6 +707,23 @@ h3 {
         /* Tighter padding */
     }
 
+    /* Fix Image Stretching on Mobile */
+    .image-card,
+    .mark-image {
+        height: auto;
+        /* Allow natural height */
+        min-height: 250px;
+        /* Minimum visual weight */
+        max-height: 400px;
+        /* Cap height to prevent "too tall" look */
+    }
+
+    .image-card img,
+    .mark-image img {
+        height: 100%;
+        object-fit: cover;
+    }
+
     .pricing-card.featured {
         transform: none;
         /* Remove scale effect on mobile */
