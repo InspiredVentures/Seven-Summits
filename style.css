@@ -35,6 +35,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
 }
 
 body {
@@ -42,6 +44,10 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-light);
+    overflow-x: hidden;
+    /* Double safety */
+    position: relative;
+    width: 100%;
 }
 
 /* Typography Overrides */
@@ -473,6 +479,10 @@ h3 {
     border: 2px solid black;
     border-radius: 0;
     box-shadow: none;
+    position: relative;
+    /* Ensure context */
+    overflow: hidden;
+    /* CLIP the ribbon so it doesn't cause scroll */
 }
 
 .card-header {
