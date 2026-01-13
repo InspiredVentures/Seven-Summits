@@ -550,37 +550,106 @@ h3 {
 
 /* Responsive */
 @media (max-width: 768px) {
+    :root {
+        --spacing-lg: 3rem;
+        /* Reduce section padding */
+        --spacing-xl: 4rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        /* Manageable title size */
+    }
+
     .hero h1 {
         font-size: 3.5rem;
+        line-height: 1;
     }
 
-    .grid-2 {
-        grid-template-columns: 1fr;
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
     }
 
-    .venue-gallery {
-        grid-template-columns: 1fr;
+    .event-details {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+
+    .separator {
+        display: none;
+    }
+
+    /* Mobile Menu - Critical Fixes */
+    .mobile-menu-btn {
+        display: block;
+        /* Ensure visible */
     }
 
     .nav-list {
+        display: none;
+        /* Hidden by default */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
         background: black;
-        /* Mobile menu black */
-        color: white;
+        flex-direction: column;
+        padding: 2rem;
+        border-bottom: 5px solid var(--accent-color);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-list.active {
+        display: flex;
+        /* Show when toggled */
     }
 
     .nav-list a {
         color: white;
         border-bottom: 1px solid #333;
         width: 100%;
-        padding: 1rem 0;
+        padding: 1.5rem 0;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .nav-list a:last-child {
+        border-bottom: none;
+    }
+
+    .nav-list a:hover {
+        color: var(--accent-color);
+    }
+
+    /* Grids & Layouts */
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Reorder text/image on mobile if needed (optional) */
+    .grid-2>div:nth-child(2) {
+        order: -1;
+        /* Image first? Or keep text first? Keeping default is usually fine */
+    }
+
+    .venue-gallery {
+        grid-template-columns: 1fr;
     }
 
     .about-text,
     .mark-text {
-        padding: 2rem;
+        padding: 2rem 1rem;
+        /* Tighter padding */
     }
 
-    .mobile-menu-btn span {
-        background: black;
+    .pricing-card.featured {
+        transform: none;
+        /* Remove scale effect on mobile */
+    }
+
+    .section {
+        padding: 3rem 0;
     }
 }
