@@ -412,49 +412,84 @@ h3 {
 
 /* Gallery - Sharp Grid */
 /* Gallery - Sharp Grid */
+/* =============================
+   Updated Gallery Styles
+   ============================= */
+
+/* 2-Column Grid (Homepage) */
 .venue-gallery-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 2x2 Grid for homepage */
     gap: 10px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
-/* Venue Page Specific - 3 Columns */
+/* 3-Column Grid (Venue Page) */
 .venue-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* 3 Columns for 3 items */
     gap: 10px;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 }
 
-/* Shared Item Styles */
+/* Common Item Styles */
 .venue-gallery-grid .gallery-item,
 .venue-gallery .gallery-item {
     height: 250px;
+    /* Fixed height */
     overflow: hidden;
+    /* Crop images */
     position: relative;
-    /* Ensure overlay positioning works */
+    border-radius: 0;
 }
 
+/* Image Scaling */
 .venue-gallery-grid img,
 .venue-gallery img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    /* Fill the box */
+    transition: transform 0.5s ease;
+    display: block;
 }
 
 .venue-gallery-grid .gallery-item:hover img,
 .venue-gallery .gallery-item:hover img {
-    transform: scale(1.05);
-    /* Zoom effect */
+    transform: scale(1.1);
 }
 
-/* Responsive Grid Fixes */
+/* Overlay (Venue Page) */
+.venue-gallery .gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    font-family: var(--font-heading);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transform: translateY(100%);
+    /* Slide in effect? or Static? Let's keep static for visibility or slide up */
+    transition: transform 0.3s ease;
+    display: flex;
+    /* Ensure centering */
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+}
+
+/* Show overlay always or on hover? User code had it static. Let's make it visible. */
+.venue-gallery .gallery-item .overlay {
+    transform: translateY(0);
+}
+
+
+/* Responsive */
 @media (max-width: 768px) {
 
     .venue-gallery,
@@ -462,17 +497,6 @@ h3 {
         grid-template-columns: 1fr;
         /* Stack on mobile */
     }
-}
-
-.gallery-item {
-    height: 300px;
-    border-radius: 0;
-}
-
-.gallery-item .overlay {
-    background: rgba(0, 0, 0, 0.7);
-    text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 /* Speaker Cards - Sharp */
